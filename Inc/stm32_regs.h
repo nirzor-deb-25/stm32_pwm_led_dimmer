@@ -1,0 +1,41 @@
+#ifndef STM32_REGS_H
+#define STM32_REGS_H
+
+#include <stdint.h>
+
+#define REG32(address) (*(volatile uint32_t *)(address))
+
+/* Peripheral clock control */
+#define RCC_AHB1ENR     REG32(0x40023830UL)
+#define RCC_APB1ENR     REG32(0x40023840UL)
+#define RCC_APB1RSTR    REG32(0x40023820UL)
+
+/* GPIOA: USER button */
+#define GPIOA_MODER     REG32(0x40020000UL)
+#define GPIOA_PUPDR     REG32(0x4002000CUL)
+#define GPIOA_IDR       REG32(0x40020010UL)
+
+/* GPIOD: onboard LEDs */
+#define GPIOD_MODER     REG32(0x40020C00UL)
+#define GPIOD_OTYPER    REG32(0x40020C04UL)
+#define GPIOD_OSPEEDR   REG32(0x40020C08UL)
+#define GPIOD_PUPDR     REG32(0x40020C0CUL)
+#define GPIOD_BSRR      REG32(0x40020C18UL)
+#define GPIOD_AFRH      REG32(0x40020C24UL)
+
+/* Cortex-M4 SysTick */
+#define SYSTICK_CTRL    REG32(0xE000E010UL)
+#define SYSTICK_LOAD    REG32(0xE000E014UL)
+#define SYSTICK_VAL     REG32(0xE000E018UL)
+
+/* TIM4 */
+#define TIM4_CR1        REG32(0x40000800UL)
+#define TIM4_EGR        REG32(0x40000814UL)
+#define TIM4_CCMR1      REG32(0x40000818UL)
+#define TIM4_CCER       REG32(0x40000820UL)
+#define TIM4_CNT        REG32(0x40000824UL)
+#define TIM4_PSC        REG32(0x40000828UL)
+#define TIM4_ARR        REG32(0x4000082CUL)
+#define TIM4_CCR1       REG32(0x40000834UL)
+
+#endif
